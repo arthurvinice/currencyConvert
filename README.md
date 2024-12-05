@@ -19,7 +19,7 @@ A simple and responsive currency converter web application that allows users to 
 1. Select the source currency (`From`) and the target currency (`To`).
 2. Enter the amount to be converted.
 3. Click the "Convert" button to see the converted value.
-4. The app uses the [ExchangeRate-API](https://www.exchangerate-api.com/) to fetch real-time exchange rates.
+4. The app uses the [Fixer.io](https://fixer.io/) to fetch real-time exchange rates.
 
 ## Installation and Setup
 
