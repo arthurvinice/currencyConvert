@@ -1,1 +1,30 @@
-# currencyConvert
+# Currency Converter
+
+A simple and responsive currency converter web application that allows users to convert values between different currencies using an external API.
+
+## Features
+
+- Convert amounts between various currencies.
+- Responsive and user-friendly interface.
+- Fetches live exchange rates from an external API.
+
+## Technologies Used
+
+- **HTML**: For the structure of the webpage.
+- **CSS**: For styling the interface and making it visually appealing.
+- **JavaScript**: For adding interactivity and consuming the API.
+
+## How It Works
+
+1. Select the source currency (`From`) and the target currency (`To`).
+2. Enter the amount to be converted.
+3. Click the "Convert" button to see the converted value.
+4. The app uses the [ExchangeRate-API](https://www.exchangerate-api.com/) to fetch real-time exchange rates.
+
+## Installation and Setup
+
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/currency-converter.git
