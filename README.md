@@ -36,22 +36,22 @@ Follow these steps to run the project locally:
 
 3. Open the index.html file in your preferred web browser.
 
-### Usage
+## Usage
 
 - Open the app in a browser.
 - Select currencies, enter the amount, and click "Convert."
 - View the result below the form.
 
-### Future Improvements
+## Future Improvements
 
 - Add support for more currencies.
 - Show historical exchange rates in a chart.
 - Allow users to select favorite currencies for quick access.
 
-### License
+## License
 
 This project is open-source and available under the MIT License.
 
-### Contributions
+## Contributions
 
 Feel free to contribute to this project by submitting a pull request or opening an issue for feedback and suggestions.
