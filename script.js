@@ -4,26 +4,40 @@ document.getElementById("convertBtn").addEventListener("click", async function (
     const amount = document.getElementById("amount").value;
 
     if (!amount || amount <= 0) {
-        alert("Por favor, insira um valor válido.");
+        alert("Please enter a valid amount.");
         return;
     }
 
     try {
-        // API gratuita para conversão de moedas
-        const response = await fetch(`https://data.fixer.io/api/latest?access_key=ab88d9d8641bad491d96e06dc28b6c13&format=1`);
+        // URL da API com chave de acesso
+        const apiKey = "ab88d9d8641bad491d96e06dc28b6c13";
+        const url = `https://data.fixer.io/api/latest?access_key=${apiKey}&format=1`;
+
+        // Requisitar os dados da API
+        const response = await fetch(url);
         const data = await response.json();
 
-        if (!data.rates[toCurrency]) {
-            alert("Conversão indisponível para a moeda selecionada.");
+        if (!data.success) {
+            throw new Error("Failed to fetch exchange rates.");
+        }
+
+        // Obter a taxa de câmbio para as moedas selecionadas
+        const rates = data.rates;
+        const fromRate = rates[fromCurrency];
+        const toRate = rates[toCurrency];
+
+        if (!fromRate || !toRate) {
+            alert("Conversion unavailable for the selected currency.");
             return;
         }
 
-        const rate = data.rates[toCurrency];
-        const convertedAmount = (amount * rate).toFixed(2);
+        // Calcular o valor convertido
+        const convertedAmount = ((amount / fromRate) * toRate).toFixed(2);
 
+        // Exibir o resultado
         document.getElementById("result").innerText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
     } catch (error) {
-        console.error("Erro ao buscar os dados:", error);
-        alert("Houve um erro ao tentar buscar as taxas de câmbio. Tente novamente mais tarde.");
+        console.error("Error:", error);
+        alert("An error occurred while fetching exchange rates. Please try again later.");
     }
 });
