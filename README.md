@@ -52,6 +52,6 @@ Follow these steps to run the project locally:
 
 This project is open-source and available under the MIT License.
 
-## Contributions
+## Contributions for the project
 
 Feel free to contribute to this project by submitting a pull request or opening an issue for feedback and suggestions.
